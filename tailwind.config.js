@@ -13,10 +13,12 @@ module.exports = {
       },
 
       fontSize: {
-        basen: ['1rem', '1rem'],
-        basex: ['1rem', '1.25rem'],
-        '1xl': ['1.25rem', '1.5rem'],
+        '2.5xl': ['1.625rem', '2rem'],
         '3.5xl': ['2rem', '2.375rem'],
+      },
+
+      lineHeight: {
+        6.5: '1.625rem',
       },
 
       colors: {
@@ -68,10 +70,6 @@ module.exports = {
           800: '#1F5F62',
           900: '#12393B',
         },
-      },
-
-      borderRadius: {
-        df: '0.625rem',
       },
 
       backgroundImage: {
