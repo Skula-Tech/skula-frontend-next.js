@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        text: 'var(--font-roboto)',
+        text: 'var(--font-inter)',
         head: 'var(--font-varela)',
       },
 

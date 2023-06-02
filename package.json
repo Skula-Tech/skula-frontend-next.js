@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lintfix": "eslint --fix --ext \".ts,.js,.tsx,.jsx\" --ignore-path .eslintignore .",
     "prepare": "husky install",
     "commit": "git-cz"
   },
@@ -18,6 +19,7 @@
     "axios": "^1.4.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "lint-staged": "^13.2.2",
     "next": "13.4.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -38,5 +40,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "yarn lintfix"
+    ]
   }
 }

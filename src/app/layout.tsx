@@ -1,12 +1,13 @@
 import './globals.css'
 import { Inter, Varela } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-roboto' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const varela = Varela({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-varela',
 })
+
 
 export const metadata = {
   title: 'Skula',
@@ -20,9 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${inter.variable} ${varela.variable} bg-n-100`}
-      >
+      <body className={`${inter.variable} ${varela.variable} bg-n-100`}>
         {children}
       </body>
     </html>

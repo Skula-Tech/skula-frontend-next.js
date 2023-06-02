@@ -1,0 +1,7 @@
+components.d.ts
+next.d.ts
+dist
+.next
+.output
+package.json
+yarn.lock
