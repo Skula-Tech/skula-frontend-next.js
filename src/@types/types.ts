@@ -8,3 +8,11 @@ export type Enumerate<
 export type TypeRange<F extends number, T extends number> =
   | Exclude<Enumerate<T>, Enumerate<F>>
   | T
+
+export type TextStyle = {
+  fontStyle?: 'smh' | 'smr' | 'xsh' | 'mdm'
+}
+
+export type HeadingStyle = {
+  fontStyle?: 'xxl' | 'sxl' | 'xlh' | 'mdh'
+}
