@@ -1,10 +1,10 @@
-import Text from '@/components/Atoms/Text'
+import { Text } from '@/components/Atoms'
 
 export default function Home() {
 
   return (
     <main>
-      Home
+      <Text>Texto</Text>
     </main>
   )
 }

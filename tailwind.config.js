@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        text: 'var(--font-inter)',
-        head: 'var(--font-varela)',
+        prim: 'var(--font-inter)',
+        sec: 'var(--font-varela)',
       },
 
       fontSize: {
