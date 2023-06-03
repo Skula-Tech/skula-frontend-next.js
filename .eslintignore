@@ -1,5 +1,4 @@
-components.d.ts
-next.d.ts
+next-env.d.ts
 dist
 .next
 .output

@@ -1,21 +1,29 @@
-import { TypeRange } from '@/@types/types'
+import clsx from 'clsx'
+import { ReactNode } from 'react'
+import { HeadingStyles } from '@/@types/types'
 
-interface HeadingProps {
-  type: TypeRange<1, 4>
-  children: string
+interface HeadingProps extends HeadingStyles {
+  children?: ReactNode
   className?: string
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'span'
 }
 
-export default function Heading({ type, children, className }: HeadingProps) {
-  const Comp = type === 1 ? 'h1' : type === 2 ? 'h2' : type === 3 ? 'h3' : 'h4'
+export const Heading = ({
+  fontStyle = 'xlh',
+  as = 'h3',
+  children,
+  className,
+}: HeadingProps) => {
+  const Comp = as
 
-  const headStyle =
-    type === 1
-      ? 'font-head text-3.5xl'
-      : type === 2
-      ? 'font-head text-2.5xl'
-      : type === 3
-      ? 'font-head text-xl leading-8'
-      : 'font-text text-base leading-6.5'
-  return <Comp className={`${headStyle} ${className}`}>{children}</Comp>
+  const headStyles = {
+    xxl: 'font-sec text-3.5xl',
+    sxl: 'font-prim text-2.5xl',
+    xlh: 'font-prim text-xl leading-8',
+    mdh: 'font-prim text-base leading-6.5',
+  }
+
+  return (
+    <Comp className={clsx(headStyles[fontStyle], className)}>{children}</Comp>
+  )
 }
