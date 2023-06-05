@@ -1,31 +1,71 @@
-import { ReactNode } from 'react'
+import clsx from 'clsx'
+import { MouseEventHandler, ReactNode } from 'react'
 
-interface InputProps {
-  id?: string
+interface InputProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  type?: 'text' | 'email' | 'password' | 'tel'
   label?: string
   labelColor?: 'white' | 'black'
-  labelLineHeight?: 'high' | 'low'
-  placeholder?: string
-  rightIcon?: ReactNode
-  className?: string
   border?: 'none' | 'purple' | 'gray'
+  className?: string
+  rightIcon?: ReactNode
+  onRightIconClick?: MouseEventHandler
 }
 
-// TODO: remove m-4 class from root div
-export const Input = ({}: InputProps) => {
+export const Input = ({
+  type,
+  label,
+  labelColor = 'black',
+  border = 'gray',
+  className,
+  rightIcon,
+  onRightIconClick,
+  ...inputprops
+}: InputProps) => {
+  const inputBorder = {
+    gray: 'ring-gray-500',
+    purple: 'ring-1-900',
+    none: 'ring-transparent',
+  }
+
   return (
-    <div className="m-4 flex flex-col gap-2">
-      <label htmlFor="input" className="font-prim text-base">
-        Label
+    <div className={clsx('flex w-full flex-col gap-2 font-prim', className)}>
+      <label
+        htmlFor={inputprops.name}
+        className={clsx('text-sm', { 'text-white': labelColor === 'white' })}
+      >
+        {label}
       </label>
-      <div className="box-content flex max-w-sm items-center overflow-hidden rounded border border-n-500 bg-white outline-1 transition duration-200 focus-within:border-black focus-within:shadow-border focus-within:outline">
+      <div
+        //TODO: verificar com equipe de UI/UX o padrão de outline
+        className={clsx(
+          'items-center, box-content flex max-w-full overflow-hidden rounded bg-white ring-1 ring-inset',
+          inputBorder[border],
+          'p-1 transition focus-within:shadow-border focus-within:ring-black'
+        )}
+      >
         <input
-          type="text"
-          name="input"
-          id="input"
-          className="w-full py-3 pl-4 font-prim text-base tracking-wide outline-none"
+          type={type}
+          name={inputprops.name}
+          id={inputprops.name}
+          placeholder={inputprops.placeholder}
+          className={clsx(
+            'w-full py-2 pl-4 font-prim text-base tracking-wide outline-none',
+            { 'pr-4': !rightIcon }
+          )}
+          {...inputprops}
         />
-        <button className="py-3 pl-1 pr-4">Click</button>
+        {rightIcon && (
+          <button
+            className="rounded px-4 outline-none ring-2 ring-transparent transition duration-200 focus-visible:shadow-border focus-visible:ring-black"
+            onClick={onRightIconClick}
+          >
+            {rightIcon}
+          </button>
+        )}
       </div>
     </div>
   )

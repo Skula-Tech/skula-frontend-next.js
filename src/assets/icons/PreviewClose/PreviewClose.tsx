@@ -7,21 +7,17 @@ export const PreviewClose = ({ className, ...props }: PreviewCloseProps) => {
       width="24"
       height="24"
       fill="none"
+      viewBox="0 0 48 48"
       className={className}
       {...props}
     >
-      <g strokeLinecap="round" strokeLinejoin="round" clipPath="url(#a)">
-        <path
-          stroke="#B3B3B3"
-          d="M4.929 9C3.119 10.5 2 12 2 12s4.477 6 10 6c.685 0 1.354-.092 2-.254M10.016 6.25A8.223 8.223 0 0 1 12 6c5.523 0 10 6 10 6s-1.12 1.5-2.929 3M10.157 10.31a2.5 2.5 0 0 0 3.593 3.475"
-        />
-        <path stroke="#8A8A8A" d="M21 21 3 3" />
-      </g>
-      <defs>
-        <clipPath id="a">
-          <path fill="#fff" d="M0 0h24v24H0z" />
-        </clipPath>
-      </defs>
+      <path
+        stroke="#B3B3B3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
+        d="M9.858 18C6.238 21 4 24 4 24s8.954 12 20 12c1.37 0 2.708-.185 4-.508M20.032 12.5c1.282-.318 2.61-.5 3.968-.5 11.046 0 20 12 20 12s-2.239 3-5.858 6M20.314 20.621a5 5 0 0 0 7.186 6.95M42 42 6 6"
+      />
     </svg>
   )
 }
