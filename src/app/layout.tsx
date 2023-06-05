@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import './globals.css'
 import { Inter, Varela } from 'next/font/google'
 
@@ -7,7 +8,6 @@ const varela = Varela({
   weight: '400',
   variable: '--font-varela',
 })
-
 
 export const metadata = {
   title: 'Skula',
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${varela.variable} bg-n-100`}>
+      <body className={clsx(inter.className, varela.variable, 'bg-n-100')}>
         {children}
       </body>
     </html>

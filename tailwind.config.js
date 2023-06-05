@@ -79,6 +79,10 @@ module.exports = {
         'gradient-logo':
           'linear-gradient(90deg, rgba(228, 136, 245, 0.5) 1.16%, rgba(115, 167, 235, 0.5) 52.12%, rgba(128, 181, 253, 0.5) 52.13%, rgba(98, 242, 166, 0.5) 100%)',
       },
+
+      boxShadow: {
+        border: '0px 0px 0px 1px #000000'
+      }
     },
   },
   plugins: [],
