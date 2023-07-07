@@ -11,8 +11,8 @@ interface InputProps
   labelColor?: 'white' | 'black'
   border?: 'none' | 'purple' | 'gray'
   className?: string
-  rightIcon?: ReactNode
-  onRightIconClick?: MouseEventHandler
+  rightElement?: ReactNode
+  onRightElementClick?: MouseEventHandler
 }
 
 export const Input = ({
@@ -21,8 +21,8 @@ export const Input = ({
   labelColor = 'black',
   border = 'gray',
   className,
-  rightIcon,
-  onRightIconClick,
+  rightElement,
+  onRightElementClick,
   ...inputprops
 }: InputProps) => {
   const inputBorder = {
@@ -54,16 +54,16 @@ export const Input = ({
           placeholder={inputprops.placeholder}
           className={clsx(
             'w-full py-2 pl-4 font-prim text-base tracking-wide outline-none',
-            { 'pr-4': !rightIcon }
+            { 'pr-4': !rightElement }
           )}
           {...inputprops}
         />
-        {rightIcon && (
+        {rightElement && (
           <button
             className="rounded px-4 outline-none ring-2 ring-transparent transition duration-200 focus-visible:shadow-border focus-visible:ring-black"
-            onClick={onRightIconClick}
+            onClick={onRightElementClick}
           >
-            {rightIcon}
+            {rightElement}
           </button>
         )}
       </div>
