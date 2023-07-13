@@ -23,7 +23,7 @@ export default function Login() {
   return (
     <main className="flex h-screen w-screen flex-col items-center gap-5 overflow-x-hidden bg-gradient-xl px-4 py-6">
       <Link href="/" className="self-start rounded hover:bg-neutral-50/20">
-        <Down strokeTheme='white' />
+        <Down className="stroke-white" />
       </Link>
       <Image src={SkulaLogo} alt="Skula Logo" />
       <Text className="mt-2 text-center text-n-50">

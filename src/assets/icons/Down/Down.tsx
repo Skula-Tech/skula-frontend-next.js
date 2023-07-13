@@ -1,10 +1,8 @@
 import clsx from 'clsx'
 
-interface DownProps extends React.SVGProps<SVGSVGElement> {
-  strokeTheme?: 'white' | 'purple'
-}
+interface DownProps extends React.SVGProps<SVGSVGElement> {}
 
-export const Down = ({ strokeTheme = 'purple', ...props }: DownProps) => {
+export const Down = ({ className, ...props }: DownProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,10 +10,7 @@ export const Down = ({ strokeTheme = 'purple', ...props }: DownProps) => {
       height="32"
       fill="none"
       viewBox="0 0 32 32"
-      className={clsx({
-        'stroke-white': strokeTheme === 'white',
-        'stroke-1-900': strokeTheme === 'purple',
-      })}
+      className={clsx(className ? className : 'stroke-1-900')}
       {...props}
     >
       <path
