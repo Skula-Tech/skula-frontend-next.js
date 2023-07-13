@@ -10,7 +10,7 @@ export const Down = ({ className, ...props }: DownProps) => {
       height="32"
       fill="none"
       viewBox="0 0 32 32"
-      className={clsx(className ? className : 'stroke-1-900')}
+      className={className}
       {...props}
     >
       <path
