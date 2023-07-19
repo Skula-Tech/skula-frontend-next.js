@@ -42,7 +42,7 @@ export const Input = ({
       <div
         //TODO: verificar com equipe de UI/UX o padrão de outline
         className={clsx(
-          'items-center, box-content flex max-w-full overflow-hidden rounded bg-white ring-1 ring-inset',
+          'box-content flex max-w-full items-center justify-center overflow-hidden rounded bg-white ring-1 ring-inset',
           inputBorder[border],
           'p-1 transition focus-within:shadow-border focus-within:ring-black'
         )}
@@ -53,7 +53,7 @@ export const Input = ({
           id={inputprops.name}
           placeholder={inputprops.placeholder}
           className={clsx(
-            'w-full py-2 pl-4 font-prim text-base tracking-wide outline-none',
+            'w-full py-2 pl-4 font-prim text-base tracking-wide outline-none placeholder:text-xs',
             { 'pr-4': !rightElement }
           )}
           {...inputprops}

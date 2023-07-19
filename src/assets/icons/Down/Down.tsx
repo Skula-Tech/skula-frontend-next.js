@@ -1,5 +1,3 @@
-import clsx from 'clsx'
-
 interface DownProps extends React.SVGProps<SVGSVGElement> {}
 
 export const Down = ({ className, ...props }: DownProps) => {
