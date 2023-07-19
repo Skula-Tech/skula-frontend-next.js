@@ -75,7 +75,7 @@ module.exports = {
 
       backgroundImage: {
         'gradient-sm': 'linear-gradient(180deg, #153461 -6%, #37D1D6 424.81%)',
-        'gradient-lg': 'linear-gradient(180deg, #183C70 -6%, #5BC9CD 203.5%)',
+        'gradient-lg': 'linear-gradient(180deg, #153461 0%, #37D1D6 190%)',
         'gradient-xl': 'linear-gradient(180deg, #153461 0%, #37D1D6 204%)',
         'gradient-logo':
           'linear-gradient(90deg, rgba(228, 136, 245, 0.5) 1.16%, rgba(115, 167, 235, 0.5) 52.12%, rgba(128, 181, 253, 0.5) 52.13%, rgba(98, 242, 166, 0.5) 100%)',
