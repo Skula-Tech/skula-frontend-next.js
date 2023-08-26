@@ -1,19 +1,23 @@
-import clsx from 'clsx'
-import { ReactNode } from 'react'
-import { TextStyles } from '@/@types/types'
+import { tv, type VariantProps } from 'tailwind-variants'
 
-interface TextProps extends TextStyles {
-  children?: ReactNode
-  className?: string
-}
+const text = tv({
+  base: 'font-prim font-medium',
+  variants: {
+    fontStyle: {
+      body1: 'text-sm',
+      body2: 'text-sm',
+      body3: 'text-xs leading-4.5',
+      body4: 'text-sxs',
+    },
+  },
+  compoundVariants: [
+    { fontStyle: 'body1', className: 'font-prim font-normal' },
+  ],
+  defaultVariants: { fontStyle: 'body2' },
+})
 
-export const Text = ({ fontStyle = 'smr', children, className }: TextProps) => {
-  const textStyles = {
-    smh: 'font-prim text-sm font-normal leading-6',
-    smr: 'font-prim text-sm font-normal leading-5',
-    xsh: 'font-prim text-xs font-normal leading-4.5',
-    mdm: 'font-prim text-base font-medium leading-6.5',
-  }
+type TextProps = VariantProps<typeof text> & React.ComponentProps<'p'>
 
-  return <p className={clsx(textStyles[fontStyle], className)}>{children}</p>
+export const Text = ({ fontStyle, className, ...props }: TextProps) => {
+  return <p className={text({ fontStyle, className })} {...props} />
 }

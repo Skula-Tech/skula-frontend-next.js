@@ -21,7 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={clsx(inter.className, varela.variable, 'bg-n-100')}>
+      <body
+        className={clsx(
+          inter.className,
+          varela.variable,
+          'bg-n-100 font-medium'
+        )}
+      >
         {children}
       </body>
     </html>

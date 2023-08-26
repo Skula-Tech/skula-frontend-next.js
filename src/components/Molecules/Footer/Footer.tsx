@@ -14,20 +14,20 @@ const links = [
 export const Footer = () => {
   return (
     <footer className="flex flex-col gap-4 divide-y-2 divide-[#D7D7D7] bg-gradient-lg px-5 pb-4 pt-6">
-      <div className="flex flex-col gap-2">
+      <nav className="flex flex-col gap-2">
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
-            <Text fontStyle="xsh" className="text-white">
+            <Text fontStyle="body3" className="text-white">
               {link.label}
             </Text>
           </Link>
         ))}
-      </div>
+      </nav>
       <div className="flex flex-col gap-2 pt-4">
         <Link href="/">
           <Image src={SkulaLogo} width={95} height={36} alt="Skula Logo" />
         </Link>
-        <Text fontStyle="xsh" className="text-white">
+        <Text fontStyle="body3" className="text-white">
           © 2022 Copyright - SKULA
         </Text>
       </div>
