@@ -1,29 +1,22 @@
-import clsx from 'clsx'
-import { ReactNode } from 'react'
-import { HeadingStyles } from '@/@types/types'
+import { tv, type VariantProps } from 'tailwind-variants'
 
-interface HeadingProps extends HeadingStyles {
-  children?: ReactNode
-  className?: string
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'span'
-}
+const heading = tv({
+  base: 'font-prim font-medium',
+  variants: {
+    as: {
+      h1: 'text-3.5xl',
+      h2: 'text-2.5xl',
+      h3: 'text-xl leading-8',
+      h4: 'text-base leading-none',
+    },
+  },
+  compoundVariants: [{ as: 'h1', className: 'font-sec font-normal' }],
+})
 
-export const Heading = ({
-  fontStyle = 'xlh',
-  as = 'h3',
-  children,
-  className,
-}: HeadingProps) => {
+type HeadingProps = VariantProps<typeof heading> & React.ComponentProps<'h1'>
+
+export const Heading = ({ as = 'h3', className, ...props }: HeadingProps) => {
   const Comp = as
 
-  const headStyles = {
-    xxl: 'font-sec text-3.5xl',
-    sxl: 'font-prim text-2.5xl font-medium text-1-800',
-    xlh: 'font-prim text-xl leading-8 text-1-800',
-    mdh: 'font-prim text-base leading-6.5 text-1-800',
-  }
-
-  return (
-    <Comp className={clsx(headStyles[fontStyle], className)}>{children}</Comp>
-  )
+  return <Comp className={heading({ as, className })} {...props} />
 }
