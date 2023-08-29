@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { Down, FacebookIcon, GoogleIcon } from '@/assets/icons'
 import { Button, Heading, Text } from '@/components/Atoms'
-import { Footer, Input } from '@/components/Molecules'
+import { Footer } from '@/components/Organisms'
+import { Input } from '@/components/Molecules'
 
 export default function SignUp() {
   return (
