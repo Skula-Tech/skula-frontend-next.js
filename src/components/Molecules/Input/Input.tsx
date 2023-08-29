@@ -16,16 +16,19 @@ interface InputProps
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({
-    type,
-    label,
-    labelColor = 'black',
-    border = 'gray',
-    className,
-    rightElement,
-    onRightElementClick,
-    ...inputprops
-  }: InputProps, ref) => {
+  (
+    {
+      type,
+      label,
+      labelColor = 'black',
+      border = 'gray',
+      className,
+      rightElement,
+      onRightElementClick,
+      ...inputprops
+    }: InputProps,
+    ref
+  ) => {
     const inputBorder = {
       gray: 'ring-gray-500',
       purple: 'ring-1-900',
@@ -36,7 +39,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className={clsx('flex w-full flex-col gap-2 font-prim', className)}>
         <label
           htmlFor={inputprops.name}
-          className={clsx('text-sm', { 'text-white': labelColor === 'white' })}
+          className={clsx('text-sm leading-none py-[1px]', {
+            'text-white': labelColor === 'white',
+          })}
         >
           {label}
         </label>
